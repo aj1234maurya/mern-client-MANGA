@@ -1,38 +1,424 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.passwordContainer {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.eyeImage {
+  position: absolute;
+  top: 30%;
+  left: 88%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loginBackgroundContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.loginBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/pixel-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #929292;
+  filter: blur(5px);
+}
+
+/* .loginBackground {
+  height: 100%;
+} */
+
+.loginBackground2 {
+  position: relative;
+  height: 100%;
+}
+
+.loginDiv {
+  /* width: fit-content; */
+  width: 32%;
+  background-color: aliceblue;
+  padding: 20px;
+  margin: 5% 0% 5% 0%;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.loginDiv form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+
+.homeDiv {
+  height: 100%;
+}
+table a {
+  text-decoration: none;
+  color: black;
+}
+.tableContainer {
+  height: fit-content;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 10px;
+}
+
+.tableContainer table {
+  width: 60%;
+}
+
+/* tr,
+th,
+tbody,
+td,
+a {
+  background-color: black !important;
+  color: white !important;
+} */
+
+/* tr,
+th,
+tbody,
+thead,
+td,
+table {
+  border: 2px solid black;
+} */
+
+.addBtn {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+h6 {
+  margin: 0;
+}
+
+#modalBtn {
+  display: flex;
+  /* border: none; */
+  /* padding: 0; */
+  /* background-color: white; */
+
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .profileNav {
+  margin-right: 30px;
+} */
+
+ul#dropDownWidth.dropdown-menu {
+  --bs-dropdown-min-width: 100px;
+  /* width: auto !important; */
+}
+
+.expandDiv {
+  position: absolute !important;
+}
+
+.dropdown-item {
+  padding: 0;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 0;
+}
+
+.formDiv input {
+  border: 1px solid black;
+}
+
+.formDiv label {
+  display: block !important;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+#modalBackground {
+  backdrop-filter: blur(10px);
+}
+
+.dark-svg {
+  background-color: #212529;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.light-svg {
+  background-color: #0d6efd;
+  color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.light-nav {
+  background-color: #e3f2fd;
+}
+
+/* .back1 {
+  background-image: url("./assets/pexels-pixabay-36717.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+} */
+
+.light-login {
+  background-image: url("./assets/pixel-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #929292;
+}
+
+.dark-login {
+  background-color: black;
+  background-image: url("./assets/pexels-pixabay-36717.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* styles.css */
+.light-theme {
+  background-color: #ffffff !important;
+  color: #000000 !important; /* Dark text color */
+  background-image: url("./assets/pixel-home-light.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.dark-theme {
+  background-color: #000000 !important;
+  color: #ffffff !important; /* Light text color */
+  background-image: url("./assets/pixel-home-dark.jpeg");
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* .even-column {
+  background-color: red !important;
+  border: 10px solid red;
+}
+
+.odd-column {
+  background-color: green !important;
+} */
+
+.light-theme-table {
+  border: 2px solid black;
+}
+
+.dark-theme-table {
+  border: 2px solid white;
+}
+
+.dark-anchor {
+  color: #ffffff !important;
+}
+
+.dark-modal {
+  background-color: #000000 !important; /* Dark background color */
+  color: #ffffff !important; /* Light text color */
+  border: 1px solid;
+}
+
+.dark-button {
+  background-color: white;
+}
+
+.input-dark {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid white !important;
+}
+
+.input-light {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid black !important;
+}
+.toggleButton {
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.navFlex {
+  gap: 10px;
+}
+
+.profileDiv {
+  height: 100%;
+  width: 100%;
+  /* height: 100vh; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardDiv {
+  position: absolute;
+}
+
+.profilePageMainDiv {
+  background-color: rgb(158, 155, 161);
+}
+.profilePicDiv {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 5px;
+  gap: 15px;
+}
+.profilePicDiv button {
+  border: 1px solid;
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+.profilePicDiv label {
+  border: 1px solid;
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+
+.profilePic {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.labelNameEdit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.card-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* .card-body h5 {
+  text-align: center;
+} */
+
+.card-body button {
+  border: none;
+  background-color: rgb(158, 155, 161);
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.editProfileButton {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+@media (min-width: 1000px) {
+  .cardDiv {
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 576px) {
+  .tableContainer table {
+    /* width: fit-content; */
+    width: 80%;
   }
+  .loginDiv {
+    width: fit-content;
+  }
+  .loginDiv form {
+    width: fit-content;
+  }
+  /* .tableContainer {
+    width: 120%;
+  } */
+  .tableContainer {
+    width: 100%;
+  }
+  .addBtn {
+    width: 80%;
+  }
+
+  #modalBtn {
+    left: 80%;
+  }
+  /* nav {
+    width: 120%;
+  } */
+  nav {
+    width: 100%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .tableContainer table {
+    width: 80%;
+  }
+  .addBtn {
+    width: 80%;
+  }
+  .loginDiv {
+    width: fit-content;
+  }
+  .loginDiv form {
+    width: fit-content;
+  }
+  .profilePicDiv,
+  .profileCardDiv {
+    width: 50%;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
