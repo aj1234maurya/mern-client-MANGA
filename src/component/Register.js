@@ -7,8 +7,10 @@ import Navbar from "./Navbar";
 import { useTheme } from "./ThemeContext";
 import { BiSolidHide } from "react-icons/bi";
 import { FaEye } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Register() {
+  const { t } = useTranslation();
   // const [navbarHeight, setNavbarHeight] = useState(0);
   const [eye, setEye] = useState(false);
   const [formData, setFormData] = useState({
@@ -141,10 +143,10 @@ function Register() {
 
       <div className="loginBackground2 d-flex align-items-center justify-content-center">
         <div className="container loginDiv">
-          <h4>Register</h4>
+          <h4>{t("register")}</h4>
           <form className="needs-validation" noValidate onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{t("name")}</label>
               <input
                 id="name"
                 type="text"
@@ -161,7 +163,7 @@ function Register() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t("email")}</label>
               <input
                 id="email"
                 placeholder="Enter Email"
@@ -177,7 +179,7 @@ function Register() {
               )}
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">{t("password")}</label>
               <div className="passwordContainer">
                 <input
                   id="password"
@@ -200,12 +202,12 @@ function Register() {
               )}
             </div>
             <button type="submit" className="btn btn-primary">
-              Sign Up
+              {t("sign_up")}
             </button>
 
             <div className="bottom-text">
               <p>
-                Already have an account? <Link to="/">Login</Link>
+                {t("already")} <Link to="/">{t("log")}</Link>
               </p>
             </div>
           </form>

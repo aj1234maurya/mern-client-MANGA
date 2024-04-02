@@ -8,8 +8,10 @@ import { useTheme } from "./ThemeContext";
 // import Main from "./Main";
 import { BiSolidHide } from "react-icons/bi";
 import { FaEye } from "react-icons/fa";
+// import { useTranslation } from "react-i18next";
 
 function Login() {
+  // const { t } = useTranslation();
   const [navbarHeight, setNavbarHeight] = useState(0);
   const [eye, setEye] = useState(false);
   const [formData, setFormData] = useState({

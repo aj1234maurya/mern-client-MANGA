@@ -7,8 +7,10 @@ import { IoIosContact } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "./ThemeContext";
 import ThemeToggleButton from "./ThemeToggleButton";
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
+  const { i18n } = useTranslation();
   const [user, setUser] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -57,6 +59,11 @@ function Navbar() {
     }
   }
 
+  function handleLanguage(code) {
+    i18n.changeLanguage(code);
+    // changeLanguage(code);
+  }
+
   return (
     <>
       {/* <nav className="navbar navbar-expand-lg bg-body-tertiary  p-0"> */}
@@ -69,6 +76,19 @@ function Navbar() {
           <Link className="navbar-brand" to="/home">
             <h5>MyCollection</h5>
           </Link>
+
+          {location.pathname === "/register" ? (
+            <select
+              name="languages"
+              id="languages"
+              value={i18n.language}
+              onChange={(event) => handleLanguage(event.target.value)}
+            >
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+            </select>
+          ) : null}
+
           {/* <ThemeToggleButton /> */}
           <div className="d-flex align-items-center navFlex">
             <ThemeToggleButton />
